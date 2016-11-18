@@ -1,137 +1,30 @@
-
-<link rel="stylesheet" href="css/jquery.mobile-1.1.0.css">
-<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="js/jquery.mobile-1.1.0.js"></script>
-<script type="text/javascript" src="js/RecordableDrawing.js"></script>
-
-<script type="text/javascript">
-
-	playbackInterruptCommand = "";
-
-	$(document).bind("pageinit", function()
-	{
-		$("#pauseBtn").hide();
-		$("#playBtn").hide();
-		drawing = new RecordableDrawing("canvas1");
-
-		$("#recordBtn").click(function(){
-			var btnTxt = $("#recordBtn .ui-btn-text").text();
-			if (btnTxt == 'Stop')
-				stopRecording();
-			else
-				startRecording();
-		});
-
-		$("#playBtn").click(function(){
-			var btnTxt = $("#playBtn .ui-btn-text").text();
-			if (btnTxt == 'Stop')
-				stopPlayback();
-			else
-				startPlayback();
-		});
-
-		$("#pauseBtn").click(function(){
-			var btnTxt = $("#pauseBtn .ui-btn-text").text();
-			if (btnTxt == 'Pause')
-			{
-				pausePlayback();
-			} else if (btnTxt == 'Resume')
-			{
-				resumePlayback();
-			}
-		});
-
-		$("#clearBtn").click(function(){
-			drawing.clearCanvas();
-		});
-	});
-
-	function stopRecording()
-	{
-		$("#recordBtn .ui-btn-text").text("Record");
-		$("#playBtn").show();
-		$("#clearBtn").show();
-		$("#pauseBtn").hide();
-
-		drawing.stopRecording();
-	}
-
-	function startRecording()
-	{
-		$("#recordBtn .ui-btn-text").text("Stop");
-		$("#playBtn").hide();
-		$("#pauseBtn").hide();
-		$("#clearBtn").hide();
-
-		drawing.startRecording();
-	}
-
-	function stopPlayback()
-	{
-		playbackInterruptCommand = "stop";
-	}
-
-	function startPlayback()
-	{
-		drawing.playRecording(function() {
-			//on playback start
-			$("#playBtn .ui-btn-text").text("Stop");
-			$("#recordBtn").hide();
-			$("#pauseBtn").show();
-			$("#clearBtn").hide();
-
-			playbackInterruptCommand = "";
-		}, function(){
-			//on playback end
-			$("#playBtn .ui-btn-text").text("Play");
-			$("#playBtn").show();
-			$("#recordBtn").show();
-			$("#clearBtn").show();
-			$("#pauseBtn").hide();
-		}, function() {
-			//on pause
-			$("#pauseBtn .ui-btn-text").text("Resume");
-			$("#recordBtn").hide();
-			$("#playBtn").hide();
-			$("#clearBtn").hide();
-
-		}, function() {
-			//status callback
-			return playbackInterruptCommand;
-		});
-	}
-
-	function pausePlayback()
-	{
-		playbackInterruptCommand = "pause";
-	}
-
-	function resumePlayback()
-	{
-		playbackInterruptCommand = "";
-		drawing.resumePlayback(function(){
-			$("#pauseBtn .ui-btn-text").text("Pause");
-			$("#pauseBtn").show();
-			$("#recordBtn").hide();
-			$("#clearBtn").hide();
-			$("#playBtn").show();
-		});
-	}
-</script>
-
-<table>
-	<tr>
-		<td>
-			<canvas id="canvas1" width="500" height="400" style="border:medium;border-color:#00F;border-style:solid">
-			</canvas>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<a href="#" data-role="button" data-inline="true" id="recordBtn">Record</a>
-			<a href="#" data-role="button" data-inline="true" id="playBtn">Play</a>
-			<a href="#" data-role="button" data-inline="true" id="pauseBtn">Pause</a>
-			<a href="#" data-role="button" data-inline="true" id="clearBtn">Clear</a>
-		</td>
-	</tr>
-</table>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Draw a Bike</title>
+		<link rel="stylesheet" href="css/jquery.mobile-1.1.0.css">
+		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.1.0.js"></script>
+		<script type="text/javascript" src="js/recordableDrawing.js"></script>
+		<script type="text/javascript" src="js/playback.js"></script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					<canvas id="canvas1" width="500" height="400" style="border:medium;border-color:#00F;border-style:solid">
+					</canvas>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#" data-role="button" data-inline="true" id="recordBtn">Record</a>
+					<a href="#" data-role="button" data-inline="true" id="playBtn">Play</a>
+					<a href="#" data-role="button" data-inline="true" id="pauseBtn">Pause</a>
+					<a href="#" data-role="button" data-inline="true" id="clearBtn">Clear</a>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

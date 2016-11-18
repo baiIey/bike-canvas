@@ -1,5 +1,6 @@
 {
   "projects": {
-    "staging": "gray-area-mt-canvas"
+    "staging": "gray-area-mt-canvas",
+    "default": "gray-area-mt-canvas"
   }
 }
