@@ -2,6 +2,8 @@
 * @author : Ram Kulkarni (http://ramkulkarni.com)
 */
 
+
+// takes a recordableDrawing.js object as argument and returns JSON string containing array of recordings.
 function serializeDrawing (drawingObj)
 {
 	if (drawingObj.recordings.length == 0)
@@ -15,6 +17,7 @@ function serializeDrawing (drawingObj)
 	}
 
 	return JSON.stringify(modifiedRecordings);
+	console.log JSON.stringify(modifiedRecordings);
 }
 
 function serializeRecording (recording)
@@ -64,6 +67,7 @@ function serializePoint (point)
 	return pointWrp;
 }
 
+// deserializeDrawing takes a String (serialized data) as argument and returns array of Recording objects.
 function deserializeDrawing (serData)
 {
 	try
