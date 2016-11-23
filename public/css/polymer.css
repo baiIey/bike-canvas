@@ -37,10 +37,10 @@ body {
 .flex {
 }
 #intro {
-  display: none;
+  display: initial;
 }
 #draw {
-  display: inherit;
+  display: none;
   max-width: 400px;
 }
 #exit {
@@ -76,14 +76,18 @@ a {
   line-height: 150%;
 }
 
-.message ul {
+.message ul, #draw ul {
   list-style: none;
   margin: 16px 0 0;
   padding: 0;
   text-align: center;
 }
 
-.message li a {
+#draw ul {
+  display: inline-flex;
+}
+
+.message li a, #draw li a {
   display: inline-block;
   padding: 8px;
   text-transform: uppercase;
@@ -95,4 +99,14 @@ a {
   border-radius: 3px;
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+#draw li a {
+  margin-right: 10px;
+}
+
+.grayBtn {
+      background: #fafafa !important;
+      border: 1px solid #fafafa !important;
+      color: #202020 !important;
 }

@@ -12,7 +12,7 @@
 		<script type="text/javascript" src="js/jquery.mobile-1.1.0.js"></script>
 		<!-- Scripts -->
 		<script type="text/javascript" src="js/recordableDrawing.js"></script>
-		<script type="text/javascript" src="js/playbackControls.js"></script>
+		<script type="text/javascript" src="js/playbackBtns.js"></script>
 		<script type="text/javascript" src="js/drawingSerializer.js"></script>
 	</head>
 	<body>
@@ -29,20 +29,17 @@
 
 				<!--<button id="recordBtn">Record</button>-->
 			<ul>
-				<li><a href="#" data-role="button" data-inline="true" id="recordBtn">Record</a></li>
-				<li><a href="#" data-role="button" data-inline="true" id="playBtn">Play</a></li>
+				<li><a class="grayBtn" href="#" data-role="button" data-inline="true" id="recordBtn">Record</a></li>
+				<li><a class="grayBtn" href="#" data-role="button" data-inline="true" id="playBtn">Play</a></li>
 				<!--<li><a href="#" data-role="button" data-inline="true" id="pauseBtn">Pause</a></li>-->
-				<li><a href="#" data-role="button" data-inline="true" id="clearBtn">Clear</a></li>
-				<li><a href="#" data-role="button" data-inline="true" id="serializeBtn">Serialize</a></li>
+				<li><a href="#" data-role="button" data-inline="true" id="serializeBtn">Submit</a></li>
+				<li><a class="grayBtn" href="#" data-role="button" data-inline="true" id="clearBtn">Clear</a></li>
 			</ul>
 		</div>
 
 		<div id="exit" class="flex message">
       <h1>Thank You</h1>
       <p>You're seeing this because you've successfully submitted your drawing. Copy the code below to end your HIT.</p>
-      <ul>
-        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
-      </ul>
     </div>
 		<!--  Firebase -->
 		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
