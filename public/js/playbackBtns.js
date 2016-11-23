@@ -26,6 +26,8 @@ playbackInterruptCommand = "";
 			$("#intro").hide();
 			$("#draw").show();
 			console.log("startBtn did press")
+			startRecording();
+			console.log("recording...")
 		});
 
 		$("#pauseBtn").click(function(){
@@ -42,7 +44,10 @@ playbackInterruptCommand = "";
 		$("#clearBtn").click(function(){
 			drawing.clearCanvas();
 			console.log("clearBtn did press");
+			startRecording();
+			console.log("Cleared. Recording...");
 		});
+
 		$("#serializeBtn").click(function() {
 			var serResult = serializeDrawing(drawing);
 			console.log("serializeBtn/Submit did press");
@@ -110,7 +115,7 @@ playbackInterruptCommand = "";
 		$("#recordBtn .ui-btn-text").text("Stop");
 		$("#playBtn").hide();
 		$("#pauseBtn").hide();
-		$("#clearBtn").hide();
+		// $("#clearBtn").hide();
 
 		drawing.startRecording();
 	}
@@ -142,7 +147,7 @@ playbackInterruptCommand = "";
 			$("#pauseBtn .ui-btn-text").text("Resume");
 			$("#recordBtn").hide();
 			$("#playBtn").hide();
-			$("#clearBtn").hide();
+			// $("#clearBtn").hide();
 
 		}, function() {
 			//status callback
@@ -162,7 +167,7 @@ playbackInterruptCommand = "";
 			$("#pauseBtn .ui-btn-text").text("Pause");
 			$("#pauseBtn").show();
 			$("#recordBtn").hide();
-			$("#clearBtn").hide();
+			// $("#clearBtn").hide();
 			$("#playBtn").show();
 		});
 	}

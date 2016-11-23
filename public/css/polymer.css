@@ -32,8 +32,6 @@ body {
   margin: 0;
   padding:0;
 }
-
-
 .flex {
 }
 #intro {
@@ -41,15 +39,16 @@ body {
 }
 #draw {
   display: none;
-  max-width: 400px;
+  width: 300px;
 }
 #exit {
   display: none;
 }
-
-canvas {
-
-}
+/* canvas {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+} */
 
 a {
   color: rgb(3,155,229);
@@ -100,11 +99,9 @@ a {
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
 }
-
 #draw li a {
   margin-right: 10px;
 }
-
 .grayBtn {
       background: #fafafa !important;
       border: 1px solid #fafafa !important;
