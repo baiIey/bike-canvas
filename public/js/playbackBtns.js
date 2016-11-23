@@ -3,7 +3,7 @@ playbackInterruptCommand = "";
 	$(document).bind("pageinit", function()
 	{
 		$("#pauseBtn").hide();
-		$("#playBtn").hide();
+		// $("#playBtn").hide();
 		drawing = new RecordableDrawing("canvas1");
 
 		$("#recordBtn").click(function(){
@@ -16,6 +16,7 @@ playbackInterruptCommand = "";
 
 		$("#playBtn").click(function(){
 			var btnTxt = $("#playBtn .ui-btn-text").text();
+			console.log("playBtn did click");
 			if (btnTxt == 'Stop')
 				stopPlayback();
 			else
@@ -113,7 +114,7 @@ playbackInterruptCommand = "";
 	function startRecording()
 	{
 		$("#recordBtn .ui-btn-text").text("Stop");
-		$("#playBtn").hide();
+		// $("#playBtn").hide();
 		$("#pauseBtn").hide();
 		// $("#clearBtn").hide();
 
