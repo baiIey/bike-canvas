@@ -29,6 +29,13 @@ playbackInterruptCommand = "";
 			console.log("startBtn did press")
 			startRecording();
 			console.log("recording...")
+			firebase.auth().signInAnonymously();
+	    console.log('sign in anonymously')
+
+			// auth listener
+			firebase.auth().onAuthStateChanged(firebaseUser => {
+				console.log(firebaseUser);
+			});
 		});
 
 		$("#pauseBtn").click(function(){
@@ -51,15 +58,19 @@ playbackInterruptCommand = "";
 
 		$("#serializeBtn").click(function() {
 			var serResult = serializeDrawing(drawing);
+
 			console.log("serializeBtn/Submit did press");
 			$("#draw").hide();
 			$("#exit").show();
 			if (serResult != null)
 			{
 				$("#serDataTxt").val(serResult);
-				showSerializerDiv();
+				// showSerializerDiv();
 				console.log("serialization worked");
 				console.log(serResult);
+				firebase.database().ref('UIDs/').push({
+					drawing: serResult
+				});
 			} else
 			{
 				alert("Error serializing data");

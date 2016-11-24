@@ -7,6 +7,20 @@
 		<!-- Styles -->
 		<!--<link rel="stylesheet" href="css/jquery.mobile-1.1.0.css">-->
 		<link rel="stylesheet" href="css/polymer.css">
+		<!--  Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyD0DnENJ0BWibQdwA1Nw-pnSK_MJBj8tyM",
+		    authDomain: "gray-area-mt-canvas.firebaseapp.com",
+		    databaseURL: "https://gray-area-mt-canvas.firebaseio.com",
+		    storageBucket: "gray-area-mt-canvas.appspot.com",
+		    messagingSenderId: "668088233358"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+
 		<!-- jQuery for mobile support -->
 		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
 		<script type="text/javascript" src="js/jquery.mobile-1.1.0.js"></script>
@@ -14,6 +28,7 @@
 		<script type="text/javascript" src="js/recordableDrawing.js"></script>
 		<script type="text/javascript" src="js/playbackBtns.js"></script>
 		<script type="text/javascript" src="js/drawingSerializer.js"></script>
+
 	</head>
 	<body>
 		<div id="intro" class="flex message">
@@ -40,10 +55,7 @@
 
 		<div id="exit" class="flex message">
       <h1>Thank You</h1>
-      <p>You're seeing this because you've successfully submitted your drawing. Copy the code below to end your HIT.</p>
+      <p>You're seeing this because you've successfully submitted your drawing. Thank you for participating in this HIT.</p>
     </div>
-		<!--  Firebase -->
-		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
-		<script src="js/apps.js"></script>
 	</body>
 </html>
