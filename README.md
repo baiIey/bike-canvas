@@ -8,6 +8,9 @@ This project and its [paper](https://docs.google.com/document/d/11AXoIEOM2QBKDXb
 * Store strings using [Firebase's real-time database](https://firebase.google.com/docs/database/)
 * Recall all strings from Firebase, deserialize, and playback
 
+### Mechanical Turk
+We requested 1000 submissions from [Amazon's Mechanical Turk](https://requester.mturk.com/), asking only that workers "Draw a bike", and paid them $0.15 each to do so.
+
 ### Firebase Anonymous Authentication
 We control access to our Firebase database by [authenticating anonymously](https://firebase.google.com/docs/auth/web/anonymous-auth) for each of our Mechanical Turks. The authentication listener creates a unique ID for each user, which we associate with our submissions when doing initial QA.
 ```
