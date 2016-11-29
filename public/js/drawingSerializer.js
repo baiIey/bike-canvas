@@ -13,7 +13,6 @@ function serializeDrawing (drawingObj)
 	{
 		modifiedRecordings.push(serializeRecording(drawingObj.recordings[i]));
 	}
-
 	return JSON.stringify(modifiedRecordings);
 }
 

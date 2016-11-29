@@ -63,6 +63,10 @@ $("#serializeBtn").click(function() {
   }
 });
 ```
+### Similar Works
+* [The Sheep Market](http://www.thesheepmarket.com/)
+* [Aaron Koblin - The Sheep Market](http://www.aaronkoblin.com/work/thesheepmarket/)
+* [Velocipedia](https://www.behance.net/GianlucaGimini)
 
 ### References
 * [De/Serializing Recordings in Recordable HTML5 Canvas](http://ramkulkarni.com/blog/deserializing-recordings-in-recordable-html5-canvas/)

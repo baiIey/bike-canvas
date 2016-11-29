@@ -8,38 +8,49 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// Get elements
-// var preObject = document.getElementById('object');
-
 // Create reference
 // var dbRefObject = firebase.database().ref().child('UIDs');
 
 // Sync drawing changes
 // dbRefObject.on('value', snap => console.log(snap.val ()));
-// dbRefObject.on('value', snap => {
-// preObject.innerText = JSON.stringify(snap.val());
 //});
 
-// Loads drawings and listens for upcoming ones
-function loadDrawings(){
-  // Reference to the /UIDs/ database path
-  this.imageRef = firebase.database().ref('UIDs');
-  // Makes sure we remove previous listeners
-  this.imageRef.off();
+// // Loads drawings and listens for upcoming ones
+// function loadDrawings(){
+//   // Reference to the /UIDs/ database path
+//   this.ref = firebase.database().ref('UIDs');
+//   // Makes sure we remove previous listeners
+//   this.ref.off();
+//   // Loads the last n images and listens for new ones.
+//   var setImage = function(data){
+//     var val = data.val();
+//     this.displayImage(data.key, val.drawing);
+//   }.bind(this);
+//   this.ref.limitToLast(1).on('child_added', setImage);
+//   this.ref.limitToLast(1).on('child_changed', setImage);
+// };
+//
+// // Displays a Image in the UI.
+// function displayImage(key, drawing) {
+//   console.log(drawing);
+//   //var len = drawing.length;
+//   // for (var i = 0; i < len; i++) {
+//   //  console.log(drawing);
+//   //}
+// };
 
-  // Loads the last n images and listens for new ones.
-  var setImage = function(data){
-    var val = data.val();
-    this.displayImage(data.key, val.drawing);
-  }.bind(this);
-  this.imageRef.limitToLast(1).on('child_added', setImage);
-  this.imageRef.limitToLast(1).on('child_changed', setImage);
-};
-
-// Displays a Image in the UI.
-function displayImage(key, drawing) {
-  console.log(drawing);
-};
+// Loop through users in order with the forEach() method. The callback provided to will be called synchronously with a DataSnapshot for each child:
+var query = firebase.database().ref("UIDs").orderByKey();
+query.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      // key will be "ada" the first time and "alan" the second time
+      var key = childSnapshot.key;
+      // childData will be the actual contents of the child
+      var childData = childSnapshot.val();
+      console.log(childData)
+  });
+});
 
 loadDrawings();
 displayImage();
