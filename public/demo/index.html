@@ -2,31 +2,32 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Draw a Bike</title>
+		<title>"Draw a Bike"</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		<link rel="stylesheet" href="css/polymer.css">
-		<!--  Firebase -->
-		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
-		<script src="js/apps.js"></script>
+		<!-- Styles -->
+		<link rel="stylesheet" href="../css/dark-polymer.css">
 		<!-- jQuery for mobile support -->
-		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
-		<script type="text/javascript" src="js/jquery.mobile-1.1.0.js"></script>
-		<!-- Canvas Scripts -->
-		<script type="text/javascript" src="js/recordableDrawing.js"></script>
-		<script type="text/javascript" src="js/playbackBtns.js"></script>
-		<script type="text/javascript" src="js/drawingSerializer.js"></script>
+		<script src="../js/jquery-1.7.2.js"></script>
+		<script src="../js/jquery.mobile-1.1.0.js"></script>
+		<!-- Canvas Recording and Playback Scripts -->
+		<script src="../js/recordableDrawing.js"></script>
+		<script src="demoPlaybackBtns.js"></script>
+		<script src="../js/drawingSerializer.js"></script>
 	</head>
 	<body>
-		<div id="intro" class="flex message">
-      <h1>Draw a Bike</h1>
-      <p>For this task, we ask that you draw a bicycle.</p>
-      <ul>
-        <li><a data-role="button" data-inline="true" id="startBtn" href="#">Start Drawing</a></li>
-      </ul>
-    </div>
 
+		<!-- Intro -->
+		<div id="intro" class="flex message">
+			<h1>Draw a Bike</h1>
+			<p>For this task, we ask that you draw a bicycle.</p>
+			<ul>
+				<li><a data-role="button" data-inline="true" id="startBtn" href="#">Start Drawing</a></li>
+			</ul>
+		</div>
+
+		<!-- Main Canvas -->
 		<div class="flex" id="draw">
-			<canvas id="canvas1"></canvas>
+			<canvas id="canvas2"></canvas>
 
 				<!--<button id="recordBtn">Record</button>-->
 			<ul>
@@ -39,14 +40,9 @@
 			</ul>
 		</div>
 
-		<div id="exit" class="flex message">
-      <h1>Thank You</h1>
-      <p>You're seeing this because you've successfully submitted your drawing. Copy the code below to complete this HIT.</p>
-			<p id="uid" style="
-    text-align: center;
-    color: rgba(0,0,0,.65);
-"><strong>KXIrHv3pOMrqh6r07SP</strong></p>
-    </div>
+		<!-- Firebase Scripts -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+		<script src="../js/apps.js"></script>
 
 		<!-- Google Analytics -->
 		<script>
@@ -57,7 +53,6 @@
 
 		  ga('create', 'UA-35836936-3', 'auto');
 		  ga('send', 'pageview');
-
 		</script>
 	</body>
 </html>
