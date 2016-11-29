@@ -1,5 +1,13 @@
 # Draw a Bike
-This project and its [paper](https://docs.google.com/document/d/11AXoIEOM2QBKDXbr_oeL1rdR6JgghLhevXqeBKCfE48/edit?usp=sharing) describe the psychological phenomenon of overlooking cotidian objects. It explores the consequences of such oversight and considers the outcomes of an experiment in which we asked 10,000 randomly self-selected people to draw a bicycle without looking at a picture.
+This experiment explores how a population of a thousand unique self-selected individuals, equipped with a given set of tools, responded when prompted to recall and reproduce a familiar object.
+
+* Prompt :	For this task, we ask that you draw a bicycle.
+* Audience : Amazon's Mechanical Turk
+* Average time per assignment : 131 seconds
+* Reward per assignment : $0.15
+* Countries of origin : 30
+
+This project and its [paper](https://docs.google.com/document/d/11AXoIEOM2QBKDXbr_oeL1rdR6JgghLhevXqeBKCfE48/edit?usp=sharing) describe the psychological phenomenon of overlooking cotidian objects. It explores the consequences of such oversight and considers the outcomes of an experiment in which we asked 1,000 randomly self-selected people to draw a bicycle without looking at a picture.
 
 ### Development
 * Commission audience on [Amazon's Mechanical Turk](https://requester.mturk.com/)

@@ -64,11 +64,11 @@ function serializePoint (point)
 	return pointWrp;
 }
 
-function deserializeDrawing (serData)
+function deserializeDrawing (drawing)
 {
 	try
 	{
-		var recordings = JSON.parse(serData);
+		var recordings = JSON.parse(drawing);
 		var result = new Array();
 		if (recordings instanceof Array )
 		{

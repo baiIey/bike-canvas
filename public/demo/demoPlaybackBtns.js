@@ -6,6 +6,7 @@ playbackInterruptCommand = "";
 		// $("#playBtn").hide();
 		drawing = new RecordableDrawing("canvas2");
 
+		// record
 		$("#recordBtn").click(function(){
 			var btnTxt = $("#recordBtn .ui-btn-text").text();
 			if (btnTxt == 'Stop')
@@ -23,14 +24,14 @@ playbackInterruptCommand = "";
 				startPlayback();
 		});
 
+		// first button a user presses
+		// closes the intro screen and starts the demo
 		$("#startBtn").click(function(){
 			$("#intro").hide();
 			$("#draw").show();
 			console.log("startBtn did press")
-			// startRecording();
-			// console.log("recording...")
-			// firebase.auth().signInAnonymously();
-	    // console.log('sign in anonymously')
+			console.log("start deserializing...")
+			deserializeDrawing();
 		});
 
 		$("#pauseBtn").click(function(){
@@ -51,6 +52,7 @@ playbackInterruptCommand = "";
 			console.log("Cleared. Recording...");
 		});
 
+		// what I need is right here.
 		$("#serializeBtn").click(function() {
 			var serResult = serializeDrawing(drawing);
 
@@ -68,7 +70,7 @@ playbackInterruptCommand = "";
 				});
 			} else
 			{
-				alert("Error serializing data");
+				// alert("Error serializing data");
 				console.log("serialization error");
 			}
 		});
