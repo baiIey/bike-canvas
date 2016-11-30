@@ -9,6 +9,16 @@ This experiment explores how a population of a thousand unique self-selected ind
 
 This project and its [paper](https://docs.google.com/document/d/11AXoIEOM2QBKDXbr_oeL1rdR6JgghLhevXqeBKCfE48/edit?usp=sharing) describe the psychological phenomenon of overlooking cotidian objects. It explores the consequences of such oversight and considers the outcomes of an experiment in which we asked 1,000 randomly self-selected people to draw a bicycle without looking at a picture.
 
+### Similar Works
+* [The Sheep Market](http://www.thesheepmarket.com/)
+* [Aaron Koblin - The Sheep Market](http://www.aaronkoblin.com/work/thesheepmarket/)
+* [Velocipedia](https://www.behance.net/GianlucaGimini)
+
+### References
+* [De/Serializing Recordings in Recordable HTML5 Canvas](http://ramkulkarni.com/blog/deserializing-recordings-in-recordable-html5-canvas/)
+* [Record and Playback Drawing in HTML5 Canvas](http://ramkulkarni.com/blog/record-and-playback-drawing-in-html5-canvas/)
+* [Record and Playback Drawing in HTML5 Canvas – Part II](http://ramkulkarni.com/blog/record-and-playback-drawing-in-html5-canvas-part-ii/)
+
 ### Development
 * Commission audience on [Amazon's Mechanical Turk](https://requester.mturk.com/)
 * Prompt audience to "Draw a Bike"
@@ -63,12 +73,23 @@ $("#serializeBtn").click(function() {
   }
 });
 ```
-### Similar Works
-* [The Sheep Market](http://www.thesheepmarket.com/)
-* [Aaron Koblin - The Sheep Market](http://www.aaronkoblin.com/work/thesheepmarket/)
-* [Velocipedia](https://www.behance.net/GianlucaGimini)
 
-### References
-* [De/Serializing Recordings in Recordable HTML5 Canvas](http://ramkulkarni.com/blog/deserializing-recordings-in-recordable-html5-canvas/)
-* [Record and Playback Drawing in HTML5 Canvas](http://ramkulkarni.com/blog/record-and-playback-drawing-in-html5-canvas/)
-* [Record and Playback Drawing in HTML5 Canvas – Part II](http://ramkulkarni.com/blog/record-and-playback-drawing-in-html5-canvas-part-ii/)
+### Fetch Drawings
+This loops through drawings in order of submission with the forEach() method. The callback provided to will be called synchronously with a DataSnapshot for each child
+```
+var query = firebase.database().ref("UIDs").orderByKey();
+
+query.once("value")
+  .then(function(snapshot) {
+    var a = snapshot.numChildren();
+    console.log(a);
+    snapshot.forEach(function(childSnapshot) {
+      // key will be "ada" the first time and "alan" the second time
+      var key = childSnapshot.key;
+      // childData will be the actual contents of the child
+      var drawing = snapshot.child(key).child("drawing").val();
+      // var childData = childSnapshot.val();
+      console.log(drawing);
+  });
+});
+```

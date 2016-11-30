@@ -39,18 +39,22 @@ firebase.initializeApp(config);
 //   //}
 // };
 
-// Loop through users in order with the forEach() method. The callback provided to will be called synchronously with a DataSnapshot for each child:
+// Loop through drawings in order of submission with the forEach() method. The callback provided to will be called synchronously with a DataSnapshot for each child
 var query = firebase.database().ref("UIDs").orderByKey();
+
 query.once("value")
   .then(function(snapshot) {
+    var a = snapshot.numChildren();
+    console.log(a);
     snapshot.forEach(function(childSnapshot) {
       // key will be "ada" the first time and "alan" the second time
       var key = childSnapshot.key;
       // childData will be the actual contents of the child
-      var childData = childSnapshot.val();
-      console.log(childData)
+      var drawing = snapshot.child(key).child("drawing").val();
+      // var childData = childSnapshot.val();
+      console.log(drawing);
   });
 });
 
-loadDrawings();
-displayImage();
+//loadDrawings();
+//displayImage();
