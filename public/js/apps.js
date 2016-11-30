@@ -52,12 +52,12 @@ query.once("value")
       // childData will be the actual contents of the child
       var drawing = snapshot.child(key).child("drawing").val();
       // var childData = childSnapshot.val();
-      // console.log(drawing);
+      console.log(drawing);
   });
 });
 
 var htmlElements = "";
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < 1000; i++) {
    htmlElements += '<canvas class="canvas"></canvas>';
 }
 var container = document.getElementById("draw");

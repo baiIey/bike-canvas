@@ -75,7 +75,7 @@ $("#serializeBtn").click(function() {
 ```
 
 ### Fetch Drawings
-This loops through drawings in order of submission with the forEach() method. The callback provided to will be called synchronously with a DataSnapshot for each child
+This loops through drawings in order of submission with Firebase's [forEach() method](https://firebase.google.com/docs/reference/js/firebase.database.DataSnapshot). The callback provided to will be called synchronously with a DataSnapshot for each child
 ```
 var query = firebase.database().ref("UIDs").orderByKey();
 

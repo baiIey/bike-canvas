@@ -17,8 +17,8 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 /* polymer lite */
 body {
   font-family: Roboto, Arial, sans-serif;
-  background: #ECEFF1;
-  color: rgba(0,0,0,0.87);
+  background: black;
+  color: lightgrey;
 }
 .ui-page.ui-body-c.ui-page-active {
   display: flex;
@@ -36,10 +36,15 @@ body {
 }
 #intro {
   display: initial;
+  margin: 1em;
+  background-color: #202020;
 }
 #draw {
   display: none;
-  width: 300px;
+  flex-flow: row wrap;
+  display: flex;
+  width: 95%;
+  height: 95%;
 }
 #exit {
   display: none;
@@ -109,5 +114,8 @@ a {
 }
 
 canvas {
-    background: white;
+    background: #202020;
+    margin: 0.05%;
+    max-width: 300px;
+    max-height: 150px;
 }
