@@ -4,7 +4,7 @@ playbackInterruptCommand = "";
 	{
 		$("#pauseBtn").hide();
 		// $("#playBtn").hide();
-		drawing = new RecordableDrawing("canvas2");
+		drawing = new RecordableDrawing("canvas");
 
 		// record
 		$("#recordBtn").click(function(){

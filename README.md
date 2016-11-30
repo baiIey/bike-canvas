@@ -1,4 +1,4 @@
-# Draw a Bike
+# Cycle()
 This experiment explores how a population of a thousand unique self-selected individuals, equipped with a given set of tools, responded when prompted to recall and reproduce a familiar object.
 
 * Prompt :	For this task, we ask that you draw a bicycle.
@@ -10,14 +10,14 @@ This experiment explores how a population of a thousand unique self-selected ind
 This project and its [paper](https://docs.google.com/document/d/11AXoIEOM2QBKDXbr_oeL1rdR6JgghLhevXqeBKCfE48/edit?usp=sharing) describe the psychological phenomenon of overlooking cotidian objects. It explores the consequences of such oversight and considers the outcomes of an experiment in which we asked 1,000 randomly self-selected people to draw a bicycle without looking at a picture.
 
 ### Similar Works
-* [The Sheep Market](http://www.thesheepmarket.com/)
-* [Aaron Koblin - The Sheep Market](http://www.aaronkoblin.com/work/thesheepmarket/)
+* [The Sheep Market](http://www.thesheepmarket.com/) by [Aaron Koblin](http://www.aaronkoblin.com/work/thesheepmarket/)
 * [Velocipedia](https://www.behance.net/GianlucaGimini)
+* [The Science of Cycology: can you draw a bicycle?](http://road.cc/content/blog/90885-science-cycology-can-you-draw-bicycle)
 
 ### References
 * [De/Serializing Recordings in Recordable HTML5 Canvas](http://ramkulkarni.com/blog/deserializing-recordings-in-recordable-html5-canvas/)
-* [Record and Playback Drawing in HTML5 Canvas](http://ramkulkarni.com/blog/record-and-playback-drawing-in-html5-canvas/)
-* [Record and Playback Drawing in HTML5 Canvas – Part II](http://ramkulkarni.com/blog/record-and-playback-drawing-in-html5-canvas-part-ii/)
+* [Foundations of Data Science](https://www.cs.cornell.edu/jeh/book2016June9.pdf)
+* [Deep Neural Networks for YouTube Recommendations](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf)
 
 ### Development
 * Commission audience on [Amazon's Mechanical Turk](https://requester.mturk.com/)

@@ -2,7 +2,7 @@
 * @author : Ram Kulkarni (http://ramkulkarni.com)
 */
 
-RecordableDrawing = function (canvasId)
+RecordableDrawing = function (canvasClass)
 {
 	var self = this;
 	this.canvas = null;
@@ -209,10 +209,10 @@ RecordableDrawing = function (canvasId)
 
 	__init = function()
 	{
-		self.canvas = $("#" + canvasId);
+		self.canvas = $("." + canvasClass);
 		if (self.canvas.length == 0)
 		{
-			alert("No canvas with id " + canvasId + " found");
+			alert("No canvas with class " + canvasClass + " found");
 			return;
 		}
 		self.canvas = self.canvas.get(0);
