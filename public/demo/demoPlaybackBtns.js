@@ -1,10 +1,11 @@
 playbackInterruptCommand = "";
 
-	$(document).bind("pageinit", function()
-	{
+// $(function() {
+//     console.log( "ready!" );
+
+$(document).bind("pageinit", function()	{
 		$("#pauseBtn").hide();
 		// $("#playBtn").hide();
-		drawing = new RecordableDrawing("canvas");
 
 		// record
 		$("#recordBtn").click(function(){
@@ -27,7 +28,8 @@ playbackInterruptCommand = "";
 		// first button a user presses
 		// closes the intro screen and starts the demo
 		$("#startBtn").click(function(){
-			$("#intro").hide();
+			drawing = new RecordableDrawing("canvas");
+			// $("#intro").hide();
 			$("#draw").show();
 			console.log("startBtn did press")
 			console.log("start deserializing...")

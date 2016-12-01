@@ -9,6 +9,8 @@ var config = {
 firebase.initializeApp(config);
 
 // Loop through drawings in order of submission with the forEach() method. The callback provided to will be called synchronously with a DataSnapshot for each child
+
+firebase.database().ref("UIDs").once("value",function() {});
 var query = firebase.database().ref("UIDs").orderByKey();
 
 query.once("value")
@@ -16,14 +18,15 @@ query.once("value")
     var a = snapshot.numChildren();
     console.log(a);
     snapshot.forEach(function(childSnapshot) {
-      // key will return the unique user ID for each drawing submission
+      // key will be "ada" the first time and "alan" the second time
       var key = childSnapshot.key;
-      // drawing will be the actual contents of the child
-      var drawing = snapshot.child(key).child("drawing").val();
-      // var drawing = childSnapshot.val();
-      console.log(drawing);
+      // childData will be the actual contents of the child
+      var serResult = snapshot.child(key).child("drawing").val();
 
+      // console.log(drawing);
       var eName = childSnapshot.val().resultname;
-      document.getElementById("draw").innerHTML += '<canvas class="canvas">'+drawing+'</canvas>';
+      document.getElementById("draw").innerHTML += '<canvas class="canvas">'+serResult+'</canvas>';
+
+      drawing = new RecordableDrawing("canvas");
   });
 });
