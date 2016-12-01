@@ -77,6 +77,7 @@ $("#serializeBtn").click(function() {
 ### Fetch Drawings
 This loops through drawings in order of submission with Firebase's [forEach() method](https://firebase.google.com/docs/reference/js/firebase.database.DataSnapshot). The callback provided to will be called synchronously with a DataSnapshot for each child
 ```
+firebase.database().ref("UIDs").once("value",function() {});
 var query = firebase.database().ref("UIDs").orderByKey();
 
 query.once("value")
@@ -87,9 +88,13 @@ query.once("value")
       // key will be "ada" the first time and "alan" the second time
       var key = childSnapshot.key;
       // childData will be the actual contents of the child
-      var drawing = snapshot.child(key).child("drawing").val();
-      // var childData = childSnapshot.val();
-      console.log(drawing);
+      var serResult = snapshot.child(key).child("drawing").val();
+
+      // console.log(drawing);
+      var eName = childSnapshot.val().resultname;
+      document.getElementById("draw").innerHTML += '<canvas class="canvas">'+serResult+'</canvas>';
+
+      drawing = new RecordableDrawing("canvas");
   });
 });
 ```
