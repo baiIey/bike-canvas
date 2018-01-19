@@ -31,7 +31,7 @@ We requested 1000 submissions from [Amazon's Mechanical Turk](https://requester.
 
 ### Firebase Anonymous Authentication
 We control access to our Firebase database by [authenticating anonymously](https://firebase.google.com/docs/auth/web/anonymous-auth) for each of our Mechanical Turks. The authentication listener creates a unique ID for each user, which we associate with our submissions when doing initial QA.
-```
+```javascript
 $("#startBtn").click(function(){
 			$("#intro").hide();
 			$("#draw").show();
@@ -50,7 +50,7 @@ $("#startBtn").click(function(){
 
 ### Serialization
 This block saves the content on canvas as a string and passes it to Firebase.
-```
+```javascript
 $("#serializeBtn").click(function() {
   var serResult = serializeDrawing(drawing);
 
@@ -76,7 +76,7 @@ $("#serializeBtn").click(function() {
 
 ### Fetch Drawings
 This loops through drawings in order of submission with Firebase's [forEach() method](https://firebase.google.com/docs/reference/js/firebase.database.DataSnapshot). The callback provided to will be called synchronously with a DataSnapshot for each child
-```
+```javascript
 firebase.database().ref("UIDs").once("value",function() {});
 var query = firebase.database().ref("UIDs").orderByKey();
 
